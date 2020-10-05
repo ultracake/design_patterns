@@ -1,3 +1,6 @@
+import Abstract_Factory.AnimalWorld;
+import Abstract_Factory.Carnivore;
+import Abstract_Factory.ContinentAbstractFactory;
 import FactoryEx.Food;
 import FactoryEx.MyFactoryEx;
 import NullObjectEx.*;
@@ -6,8 +9,9 @@ public class MainExecuter
 {
     public static void main(String[] args)
     {
-       //factoryTester();
-        nullObjectTester();
+        // factoryTester();
+        // nullObjectTester();
+        abstractFactoryTester();
     }
 
     public static void factoryTester()
@@ -37,5 +41,13 @@ public class MainExecuter
         System.out.println(obj2.getName());
         System.out.println(obj3.getName());
         System.out.println(obj4.getName());
+    }
+
+    //creates a factory after continent of choice, the factories can create animals
+    public static void abstractFactoryTester()
+    {
+        ContinentAbstractFactory animalFactory_America = AnimalWorld.getFactory("africa");
+        Carnivore animal = animalFactory_America.createCarnivore("bob");
+        animal.hunt();
     }
 }
