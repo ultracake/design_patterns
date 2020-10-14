@@ -1,6 +1,7 @@
 import Abstract_Factory.AnimalWorld;
 import Abstract_Factory.Carnivore;
 import Abstract_Factory.ContinentAbstractFactory;
+import Builder.CakeSelfBuild;
 import FactoryEx.Food;
 import FactoryEx.MyFactoryEx;
 import NullObjectEx.*;
@@ -11,7 +12,8 @@ public class MainExecuter
     {
         // factoryTester();
         // nullObjectTester();
-        abstractFactoryTester();
+        //abstractFactoryTester();
+        builderTester();
     }
 
     public static void factoryTester()
@@ -49,5 +51,33 @@ public class MainExecuter
         ContinentAbstractFactory animalFactory_America = AnimalWorld.getFactory("africa");
         Carnivore animal = animalFactory_America.createCarnivore("bob");
         animal.hunt();
+    }
+
+    //builds cakes with builder pattern
+    public static void builderTester()
+    {
+        //everything
+        CakeSelfBuild appleCake = new CakeSelfBuild.CakeBuilder("Golden red", "apple")
+                .layers(3)
+                .decorText("happy cakes day")
+                .taste2("vanilla")
+                .build();
+        System.out.println(appleCake);
+
+        //missing some optional
+        CakeSelfBuild cake2 = new CakeSelfBuild.CakeBuilder("Jackie`s cake", "chocolate")
+                .layers(3)
+                .decorText("awesomeness")
+                //no taste2
+                .build();
+        System.out.println(cake2);
+
+        //missing all optional
+        CakeSelfBuild cake3 = new CakeSelfBuild.CakeBuilder("standard", "vanilla")
+                //No layer, clean cream
+                //No text
+                //no taste2
+                .build();
+        System.out.println(cake3);
     }
 }
