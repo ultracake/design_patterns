@@ -2,6 +2,7 @@ import Abstract_Factory.AnimalWorld;
 import Abstract_Factory.Carnivore;
 import Abstract_Factory.ContinentAbstractFactory;
 import Builder.CakeSelfBuild;
+import Facade.Mall;
 import FactoryEx.Food;
 import FactoryEx.MyFactoryEx;
 import NullObjectEx.*;
@@ -13,7 +14,8 @@ public class MainExecuter
         // factoryTester();
         // nullObjectTester();
         //abstractFactoryTester();
-        builderTester();
+        //builderTester();
+        facadeTester();
     }
 
     public static void factoryTester()
@@ -27,7 +29,6 @@ public class MainExecuter
         //get an object of Buns and call its describe method.
         Food food2 = myFactoryEx.getFood("Bread");
         food2.describe();
-
     }
 
     //show if the needs to be a null-obj or real-obj from the factory
@@ -79,5 +80,14 @@ public class MainExecuter
                 //no taste2
                 .build();
         System.out.println(cake3);
+    }
+
+    //Shows the simplicity of facade pattern
+    public static void facadeTester()
+    {
+        Mall mall = new Mall();
+
+        mall.getCakeMenu();
+        mall.getBurgerMenu();
     }
 }
