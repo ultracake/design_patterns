@@ -30,13 +30,10 @@ public class BiderObserver implements IObserver
     public int getCurrentPrice() {
         return currentPrice;
     }
-
     public int getMyBid() {
         return myBid;
     }
-
     public String getName() {
         return name;
     }
-
 }

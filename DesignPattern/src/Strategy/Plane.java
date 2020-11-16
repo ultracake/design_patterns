@@ -7,10 +7,10 @@ public class Plane implements ContextStrategy
     {
         if(time < 60 || price < 500)
         {
-            System.out.println("you can´t get a plane for that time or price");
+            System.out.println("- you can´t get a plane for that time or price");
         }else
         {
-            System.out.println("lets fly mate");
+            System.out.println("- let´s fly mate");
         }
     }
 }

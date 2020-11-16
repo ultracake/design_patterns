@@ -7,10 +7,10 @@ public class Taxi implements ContextStrategy
     {
         if(time < 10 || price < 300)
         {
-            System.out.println("you can´t get a ride for that time or price");
+            System.out.println("- you can´t get a ride for that time or price");
         }else
         {
-            System.out.println("lets race to that destination");
+            System.out.println("- let´s race to that destination");
         }
     }
 }
