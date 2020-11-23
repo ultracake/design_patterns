@@ -1,4 +1,4 @@
-package Decorater;
+package CafeExample;
 
 public class MyCafe
 {

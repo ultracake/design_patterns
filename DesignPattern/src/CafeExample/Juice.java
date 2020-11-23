@@ -1,16 +1,16 @@
-package Decorater;
+package CafeExample;
 
-public class Coke extends Drinks
+public class Juice extends Drinks
 {
     @Override
     public String name()
     {
-        return "Coke";
+        return null;
     }
 
     @Override
     public float price()
     {
-        return 30;
+        return 20;
     }
 }

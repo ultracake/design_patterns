@@ -1,4 +1,4 @@
-package Decorater;
+package CafeExample;
 
 public abstract class Burger implements Item
 {

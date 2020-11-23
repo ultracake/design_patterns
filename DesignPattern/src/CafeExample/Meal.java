@@ -1,4 +1,4 @@
-package Decorater;
+package CafeExample;
 
 import java.util.ArrayList;
 import java.util.List;
