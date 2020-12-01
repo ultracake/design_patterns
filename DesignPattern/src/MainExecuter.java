@@ -2,6 +2,9 @@ import Abstract_Factory.AnimalWorld;
 import Abstract_Factory.Carnivore;
 import Abstract_Factory.ContinentAbstractFactory;
 import Builder.CakeSelfBuild;
+import Decorator.Drink;
+import Decorator.Sweetener;
+import Decorator.Tea;
 import Facade.Mall;
 import FactoryEx.Food;
 import FactoryEx.MyFactoryEx;
@@ -15,7 +18,8 @@ public class MainExecuter
         // nullObjectTester();
         //abstractFactoryTester();
         //builderTester();
-        facadeTester();
+        //facadeTester();
+        decoratorTester();
     }
 
     public static void factoryTester()
@@ -89,5 +93,17 @@ public class MainExecuter
 
         mall.getCakeMenu();
         mall.getBurgerMenu();
+    }
+
+    public static void decoratorTester()
+    {
+        System.out.println("normal:");
+        Drink tea = new Tea();
+        System.out.println(tea.getName() +": " + tea.cost());
+
+        System.out.println("with decorator:");
+        //wrap the tea with a sweetener
+        Sweetener sweetTea = new Sweetener(tea);
+        System.out.println(sweetTea.getName() +": " + sweetTea.cost());
     }
 }
